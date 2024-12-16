@@ -97,6 +97,9 @@ test_predictions_df = pd.DataFrame({'Churn': test_df['Churn'],
                                      'Probability_Churn=0': test_probabilities[:, 0],
                                      'Probability_Churn=1': test_probabilities[:, 1]})
 
+# Save to CSV
+test_predictions_df.to_csv('prediction_file.csv', index=False)
+
 # Confusion Matrix
 conf_matrix = confusion_matrix(test_df['Churn'], test_predictions)
 print("\nConfusion Matrix:")
